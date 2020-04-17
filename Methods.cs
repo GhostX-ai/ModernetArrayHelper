@@ -58,5 +58,16 @@ class Methods<M>
             }
             arr = narr;
         }
+        else if (x > 0)
+        {
+            M[] narr = new M[arr.Length - x + 1];
+            int cn = 0;
+            for (int i = 0; i <= x; i++)
+            {
+                narr[cn] = arr[i];
+                cn++;
+            }
+            arr = narr;
+        }
     }
 }
