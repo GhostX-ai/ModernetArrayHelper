@@ -33,4 +33,14 @@ class Methods<M>
         ar = nar;
         return fs;
     }
+    public void UnShift(ref M[] ar, M ne)
+    {
+        M[] nar = new M[ar.Length + 1];
+        nar[0] = ne;
+        for (int x = 0; x < nar.Length - 1; x++)
+        {
+            nar[x + 1] = ar[x];
+        }
+        ar = nar;
+    }
 }
