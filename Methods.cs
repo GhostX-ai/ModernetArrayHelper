@@ -22,4 +22,15 @@ class Methods<M>
         nar[nar.Length - 1] = ne;
         ar = nar;
     }
+    public M Shift(ref M[] ar)
+    {
+        M[] nar = new M[ar.Length - 1];
+        for (int x = 0; x < nar.Length; x++)
+        {
+            nar[x] = ar[x + 1];
+        }
+        M fs = ar[0];
+        ar = nar;
+        return fs;
+    }
 }
