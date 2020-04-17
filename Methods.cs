@@ -70,4 +70,22 @@ class Methods<M>
             arr = narr;
         }
     }
+    public void Slice(ref M[] arr, int x, int y)
+    {
+        if (x > 0 && y > 0)
+        {
+            M[] narr = new M[y - x + 1];
+            int cn = 0;
+            for (int i = x; i <= y; i++)
+            {
+                narr[cn] = arr[i];
+                cn++;
+            }
+            arr = narr;
+        }
+        else (x > 0 && y < 0)
+        {
+            
+        }
+    }
 }
