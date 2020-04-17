@@ -43,4 +43,20 @@ class Methods<M>
         }
         ar = nar;
     }
+    public void Slice(ref M[] arr, int x)
+    {
+        if (x < 0)
+        {
+            M[] narr = new M[Math.Abs(x)];
+            int cn = 0;
+            bool ch = true;
+            for (int i = arr.Length - 1; ch; i--)
+            {
+                ch = !(cn == Math.Abs(x) - 1);
+                narr[cn] = arr[i];
+                cn++;
+            }
+            arr = narr;
+        }
+    }
 }
