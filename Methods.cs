@@ -43,7 +43,7 @@ class Methods<M>
         }
         ar = nar;
     }
-    public void Slice(ref M[] arr, int x)
+    public M[] Slice(ref M[] arr, int x)
     {
         if (x < 0)
         {
@@ -56,7 +56,7 @@ class Methods<M>
                 narr[cn] = arr[i];
                 cn++;
             }
-            arr = narr;
+            return narr;
         }
         else if (x > 0)
         {
@@ -67,10 +67,14 @@ class Methods<M>
                 narr[cn] = arr[i];
                 cn++;
             }
-            arr = narr;
+            return narr;
+        }
+        else
+        {
+            return arr;
         }
     }
-    public void Slice(ref M[] arr, int x, int y)
+    public M[] Slice(ref M[] arr, int x, int y)
     {
         if (x > 0 && y > 0)
         {
@@ -81,11 +85,22 @@ class Methods<M>
                 narr[cn] = arr[i];
                 cn++;
             }
-            arr = narr;
+            return narr;
         }
-        else (x > 0 && y < 0)
+        else if (x > 0 && y < 0)
         {
-            
+            M[] narr = new M[arr.Length - Math.Abs(y) - 1];
+            int cn = 0;
+            for (int i = x; i <= narr.Length; i++)
+            {
+                narr[cn] = arr[i];
+                cn++;
+            }
+            return narr;
+        }
+        else
+        {
+            return arr;
         }
     }
 }
